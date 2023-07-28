@@ -1,17 +1,47 @@
 # DAY 1
 
+![Static Badge](https://img.shields.io/badge/Date-28--7--2023-blue?logo=googlecalendar&logoColor=f5f5f5)
 
+## Kubernetes
+
+### What is Kubernetes?
+
+Kubernetes, also known as **K8s**, a widely used open-source platform, facilitates the deployment, scaling, and management of container applications. Initially created by **Google**, Kubernetes is versatile enough to operate in various infrastructure environments, including on-premise, cloud, and hybrid setups.
+
+### Key features
+
+- Automated rollouts and rollbacks
+- Service discovery and load balancing
+- Storage orchestration
+- Self-healing
+- Secret and configuration management
+- Automatic bin packing
+- Batch execution
+- Horizontal scaling
+- IPv4/IPv6 dual-stack
+- Designed for extensibility
+
+### Minikube
+
+Minikube is a local Kubernetes implementation that runs on a single machine. It is designed for development and testing, and it is not intended to be used in production. Minikube is a good way to learn about Kubernetes and to test your applications before you deploy them to a production cluster.
+
+## Getting Started
 
 **Requirement:**
 
-- Docker / [Docker destop](https://www.docker.com/products/docker-desktop/)
+For this practice I use **Docker**/[Docker Destop](https://www.docker.com/products/docker-desktop/) as the virtual infrastructure.
 
+I also use [kubectl](https://kubernetes.io/docs/tasks/tools/) as the Kubernetes command-line tool, allows us to interact with the Kubernetes cluster using commands.
 
-## 1. Install minikube with homebrew
+### 1. Install minikube 
+
+**minikube** is accessible on various platforms and package managers, including **Homebrew** which I use in this exercise.
 
 `brew install minikube`
 
-## 2. Create minikube cluster
+### 2. Create minikube cluster
+
+Before we can start using Kubernetes, we must first set up the cluster on our local machine's Docker.
 
 `minikube start`
 
@@ -36,9 +66,9 @@
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
 
-## 3. Interact with cluster
+### 3. Interact with cluster
 
-Get all pods from all namespaces
+Using kubectl we can get all pods from all namespaces.
 
 `kubectl get po -A`
 
@@ -53,7 +83,13 @@ kube-system   kube-scheduler-minikube            1/1     Running   1 (8m47s ago)
 kube-system   storage-provisioner                1/1     Running   3 (4m56s ago)   10m
 ```
 
-Start kubernetes dashboard
+> *Pods* are the smallest deployable units of computing that you can create and manage in Kubernetes.
+
+> In Kubernetes, *namespaces* provides a mechanism for isolating groups of resources within a single cluster.
+
+minikube also provides a Kubernetes dashboard, which enables us to obtain valuable information and oversee our cluster.
+
+We can start the dashboard server locally using this command.
 
 `minikube dashboard`
 
@@ -71,7 +107,12 @@ Start kubernetes dashboard
 🤔  Verifying proxy health ...
 🎉  Opening http://127.0.0.1:51214/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
 ```
+
+Once the dashboard is prepared, you can simply access the URL through your web browser.
+
 ![1.1](img/1.1.png)
 
 ## Reference
+- [kubernetes](https://kubernetes.io/)
+- [pods](https://kubernetes.io/docs/concepts/workloads/pods/)
 - [minikube start](https://minikube.sigs.k8s.io/docs/start/)
