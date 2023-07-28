@@ -2,4 +2,5 @@
 - Day 2
 
 ![0.1](img/0.1.gif)
+
 ~[vscode-pets](https://marketplace.visualstudio.com/items?itemName=tonybaloney.vscode-pets)
