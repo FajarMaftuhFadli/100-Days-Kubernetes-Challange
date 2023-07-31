@@ -45,6 +45,7 @@ Before we can start using Kubernetes, we must first set up the cluster on our lo
 
 `minikube start`
 
+output:
 ```
 😄  minikube v1.30.1 on Darwin 13.4.1 (arm64)
 ✨  Using the docker driver based on existing profile
@@ -72,6 +73,7 @@ Using kubectl we can get all pods from all namespaces.
 
 `kubectl get po -A`
 
+output:
 ```
 NAMESPACE     NAME                               READY   STATUS    RESTARTS        AGE
 kube-system   coredns-787d4945fb-57fn4           1/1     Running   1 (8m42s ago)   10m
@@ -93,6 +95,7 @@ We can start the dashboard server locally using this command.
 
 `minikube dashboard`
 
+output:
 ```
 🔌  Enabling dashboard ...
     ▪ Using image docker.io/kubernetesui/dashboard:v2.7.0
