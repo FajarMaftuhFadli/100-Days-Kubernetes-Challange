@@ -6,7 +6,7 @@
 
 ### 1. Deploy and app
 
-To deploy an app to our cluster, we must create a **Kubernetes Deployment**. In this command, I use the Nginx app sample image stored in Google Cloud Container Registry (GCR).
+To deploy an app to our cluster, we must create a **Kubernetes Deployment**. In this command, I use the NodeJS app sample image stored in Google Cloud Container Registry (GCR).
 
 `kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1`
 
@@ -83,3 +83,79 @@ output:
   }
 }
 ```
+
+## Viewing Pods and Nodes
+
+### 1. Pods
+
+### 2. Nodes
+
+### 3. Troubleshooting with kubectl
+
+- `kubectl get` - list resources
+- `kubectl describe` - show detailed information about a resource
+- `kubectl logs` - print the logs from a container in a pod
+- `kubectl exec` - execute a command on a container in a pod
+
+Subcommand get, is use to get list of any resources such as pods, service, deployments, etc. In here we view the list of pods that are exist in our cluster.
+
+`kubectl get pods`
+
+```
+NAME                                   READY   STATUS    RESTARTS   AGE
+kubernetes-bootcamp-5485cc6795-vckkb   1/1     Running   0          9h
+```
+
+describe is use to get detailed information about our K8s cluster resources.
+
+`kubectl describe pods`
+
+```
+Name:             kubernetes-bootcamp-5485cc6795-vckkb
+Namespace:        default
+Priority:         0
+Service Account:  default
+                  .
+                  .
+                  .
+```
+
+Usually application send standard output that becomes logs for the container, this logs we can view it using this command.
+
+`kubectl logs "$POD_NAME"`
+
+```
+Kubernetes Bootcamp App Started At: 2023-07-31T07:01:56.053Z | Running On:  kubernetes-bootcamp-5485cc6795-vckkb 
+```
+
+> If there is only one container inside the pod, we don't need to spesify the container name
+
+
+`kubectl exec "$POD_NAME" -- env`
+
+```
+HOME=/root
+NODE_VERSION=6.3.1
+NPM_CONFIG_LOGLEVEL=info
+KUBERNETES_SERVICE_PORT_HTTPS=443
+KUBERNETES_SERVICE_PORT=443
+KUBERNETES_SERVICE_HOST=10.96.0.1
+KUBERNETES_PORT_443_TCP_ADDR=10.96.0.1
+KUBERNETES_PORT_443_TCP_PORT=443
+KUBERNETES_PORT_443_TCP_PROTO=tcp
+KUBERNETES_PORT_443_TCP=tcp://10.96.0.1:443
+KUBERNETES_PORT=tcp://10.96.0.1:443
+HOSTNAME=kubernetes-bootcamp-5485cc6795-vckkb
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+```
+
+`kubectl exec -ti $POD_NAME -- bash`
+
+`cat server.js`
+
+`curl http://localhost:8080`
+
+`exit`
+
+## Reference
+- [Tutorial](https://kubernetes.io/docs/tutorials/)
