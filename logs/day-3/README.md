@@ -18,11 +18,50 @@ To expose our previous Pods we can use **expose** subcommand, define the type to
 
 `kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080`
 
+Let see our services:
+
 `kubectl get services`
+
+```
+NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+kubernetes            ClusterIP   10.96.0.1      <none>        443/TCP          4d5h
+kubernetes-bootcamp   NodePort    10.98.21.129   <none>        8080:31536/TCP   10m
+```
+
+We can also view the detail of our service.
 
 `kubectl describe services/kubernetes-bootcamp`
 
+```
+Name:                     kubernetes-bootcamp
+Namespace:                default
+Labels:                   app=kubernetes-bootcamp
+Annotations:              <none>
+Selector:                 app=kubernetes-bootcamp
+Type:                     NodePort
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.98.21.129
+IPs:                      10.98.21.129
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31536/TCP
+Endpoints:                10.244.0.20:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+```
+
+In the above output, we can see some important info such as Port, Labels, Type, etc.
+
+Since we utilize minikube within a docker, it becomes necessary to execute this command. By doing so, minikube establishes a tunnel connecting the minikube cluster to our local machine and assigns the service to the local port.
+
 `minikube service kubernetes-bootcamp --url`
+
+```
+http://127.0.0.1:54449
+❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
+```
 
 ## Reference
 - [Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
