@@ -2,9 +2,9 @@
 
 ![Static Badge](https://img.shields.io/badge/Date-31--7--2023-blue?logo=googlecalendar&logoColor=f5f5f5)
 
-## Deploy and app
+## Deploy an app
 
-### 1. Deploy and app
+### 1. Deploy an app
 
 To deploy an app to our cluster, we must create a **Kubernetes Deployment**. In this command, I use the NodeJS app sample image stored in Google Cloud Container Registry (GCR).
 
