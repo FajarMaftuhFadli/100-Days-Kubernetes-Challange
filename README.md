@@ -2,6 +2,7 @@
 
 - [Day 1](./logs/day-1/README.md)
 - [Day 2](./logs/day-2/README.md)
+- [Day 3](./logs/day-3/README.md)
 
 
 
