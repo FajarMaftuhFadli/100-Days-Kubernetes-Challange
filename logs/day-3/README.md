@@ -121,7 +121,7 @@ Get the services to confirm if the service is deleted.
 
 ## Navigation
 
-[◀︎ PREVIOUS](../day-2/README.md) ∙ [ HOME ](../../README.md) ∙ [NEXT ▶](../day-4/README.md)
+[&#9664; PREVIOUS](../day-2/README.md) ∙ [ HOME ](../../README.md) ∙ [NEXT &#9654;](../day-4/README.md)
 
 ## Reference
 - [Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)

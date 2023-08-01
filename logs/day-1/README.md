@@ -119,7 +119,7 @@ Once the dashboard is prepared, you can simply access the URL through your web b
 
 ## Navigation
 
-[ HOME ](../../README.md) ∙ [NEXT ▶](../day-2/README.md)
+[ HOME ](../../README.md) ∙ [NEXT &#9654;](../day-2/README.md)
 
 ## Reference
 - [kubernetes](https://kubernetes.io/)
