@@ -176,6 +176,10 @@ We use `exit` to close this interactive bash.
 
 `exit`
 
+## Navigation
+
+[◀︎ PREVIOUS](../day-1/README.md) ∙ [ HOME ](../../README.md) ∙ [NEXT ▶](../day-3/README.md)
+
 ## Reference
 - [Using kubectl to Create a Deployment](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/)
 - [Viewing Pods and Nodes](https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/)

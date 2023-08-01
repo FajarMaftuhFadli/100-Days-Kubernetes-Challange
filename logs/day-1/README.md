@@ -117,6 +117,10 @@ Once the dashboard is prepared, you can simply access the URL through your web b
 
 ![1.1](img/1.1.png)
 
+## Navigation
+
+[ HOME ](../../README.md) ∙ [NEXT ▶](../day-2/README.md)
+
 ## Reference
 - [kubernetes](https://kubernetes.io/)
 - [pods](https://kubernetes.io/docs/concepts/workloads/pods/)

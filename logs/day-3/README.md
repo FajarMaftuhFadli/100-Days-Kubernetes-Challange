@@ -6,6 +6,8 @@
 
 ## Using a Service to Expose Your App
 
+### 1. Create a new Service
+
 The **Service** allows us to access the application on our Pods. Within the Service, we can specify the **Pods** to which we want to direct traffic. The Service has various ways to be exposed by defining its type:
 
 - **ClusterIP (default)** - Exposes the Service on an internal IP in the cluster. This type makes the Service only reachable from within the cluster.
@@ -64,6 +66,62 @@ Since we utilize minikube within a docker, it becomes necessary to execute this 
 http://127.0.0.1:54449
 ❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
 ```
+
+### 2. Using labels
+
+**Labels** are essentially text-based key-value pairs that get associated with different resources within Kubernetes (K8s). You can apply multiple labels to a single resource. These labels can be utilized as selectors to identify specific resources, or they can be used to group and categorize resources based on common characteristics.
+
+We can view the label from a resource using **describe**
+
+`kubectl describe deployments.apps kubernetes-bootcamp`
+
+```
+.
+.
+Pod Template:
+  Labels:       app=kubernetes-bootcamp
+  Annotations:  kubectl.kubernetes.io/restartedAt: 2023-08-01T15:38:04+07:00
+.
+.
+```
+
+Utilize the `-l` option to employ the label selector. The label selector can be applied to different types of resources as well.
+
+`kubectl get pods -l app=kubernetes-bootcamp`
+
+I export the pod name to the env var so that we can use it later.
+
+`export POD_NAME="$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')"`
+
+Here we add label `version=v1` to the pod
+
+`kubectl label pods "$POD_NAME" version=v1`
+
+```
+pod/kubernetes-bootcamp-6bf7958f5f-dp7gj labeled
+```
+
+Thus we can see the new label when we describe.
+
+`kubectl describe pods "$POD_NAME"`
+
+We can used it in label selector as well.
+
+`kubectl get pods -l version=v1`
+
+### 3. Deleting a service
+
+We can do other operation such as **delete** using label selector too.
+
+`kubectl delete service -l app=kubernetes-bootcamp`
+
+Get the services to confirm if the service is deleted.
+
+`kubectl get services`
+
+## Navigation
+
+[◀︎ PREVIOUS](../day-2/README.md) ∙ [ HOME ](../../README.md) ∙ [NEXT ▶](../day-4/README.md)
 
 ## Reference
 - [Using a Service to Expose Your App](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
