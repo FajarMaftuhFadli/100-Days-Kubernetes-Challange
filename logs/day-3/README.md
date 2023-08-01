@@ -1,6 +1,8 @@
 # DAY 3
 
-![Static Badge](https://img.shields.io/badge/Date-1--8--2023-blue?logo=googlecalendar&logoColor=f5f5f5)
+![Static Badge](https://img.shields.io/badge/Date-1--8--2023-f5f5f5?logo=googlecalendar&logoColor=f5f5f5)
+![Static Badge](https://img.shields.io/badge/Docker-v24.0.2-2496ed?logo=docker&logoColor=2496ed)
+![Static Badge](https://img.shields.io/badge/minikube-v1.30.1-326ce5?logo=kubernetes&logoColor=326ce5)
 
 ## Using a Service to Expose Your App
 
