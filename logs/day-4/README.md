@@ -56,7 +56,7 @@ Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6bf7958f5f-jtfvz | 
 .
 ```
 
-From the output, we observe that the suffix is varying, indicating that it originated from various Pods, and the Load Balancer is functioning correctly.
+If we refresh the URL several times, from the output, we observe that the suffix is varying, indicating that it originated from various Pods, and the Load Balancer is functioning correctly.
 
 ### 3. Scale Down
 
