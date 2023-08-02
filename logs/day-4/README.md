@@ -37,7 +37,46 @@ The process of scale up the replicas that we have recently done is recorded in t
 
 ### 2. Load Balancing
 
+Because I delete the service yesterday, now we need to create the service again.
+
+`kubectl expose deployments.apps kubernetes-bootcamp --type=NodePort --port=8080`
+
+Create a mininkube tunnel to that service.
+
+`minikube service kubernetes-bootcamp --url`
+
+```
+Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6bf7958f5f-dp7gj | v=1
+
+Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6bf7958f5f-jtfvz | v=1
+.
+.
+.
+```
+
+From the output, we observe that the suffix is varying, indicating that it originated from various Pods, and the Load Balancer is functioning correctly.
+
 ### 3. Scale Down
+
+We can also utilize **scale** for reducing the size of our deployment.
+
+`kubectl scale deployments/kubernetes-bootcamp --replicas=2`
+
+We can verify that the available pods are fully occupied, with a total of 2 out of 2 being in use.
+
+`kubectl get deployments.apps`
+
+Two of these Pods are currently undergoing termination, as we can see from their status.
+
+`kubectl get pods -o wide`
+
+```
+NAME                                   READY   STATUS        RESTARTS        AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+kubernetes-bootcamp-6bf7958f5f-dp7gj   1/1     Terminating   1 (3h54m ago)   23h     10.244.0.21   minikube   <none>           <none>
+kubernetes-bootcamp-6bf7958f5f-jtfvz   1/1     Running       0               3h40m   10.244.0.27   minikube   <none>           <none>
+kubernetes-bootcamp-6bf7958f5f-shbc7   1/1     Running       0               3h40m   10.244.0.25   minikube   <none>           <none>
+kubernetes-bootcamp-6bf7958f5f-zvtbx   1/1     Terminating   0               3h40m   10.244.0.26   minikube   <none>           <none>
+```
 
 ## Navigation
 
