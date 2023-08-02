@@ -1,10 +1,13 @@
-# Table of contents
+# 100-Day Kubernetes Challenge with Minikube
 
-- [Day 1](./logs/day-1/README.md)
-- [Day 2](./logs/day-2/README.md)
-- [Day 3](./logs/day-3/README.md)
+The guide of this challenge can be found in [Here](https://github.com/FajarMaftuhFadli/100-Days-Kubernetes-Challange/tree/main).
 
+## Table of Contents
 
+- [`Day 1`](./logs/day-1/README.md)
+- [`Day 2`](./logs/day-2/README.md)
+- [`Day 3`](./logs/day-3/README.md)
+- [`Day 4`](./logs/day-4/README.md)
 
 <p align="center">
     <img style="border-radius: 1rem;" src="img/0.1.gif">
