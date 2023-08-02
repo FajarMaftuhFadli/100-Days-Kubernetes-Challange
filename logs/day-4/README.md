@@ -45,6 +45,8 @@ Create a mininkube tunnel to that service.
 
 `minikube service kubernetes-bootcamp --url`
 
+Open the URL provided using a browser.
+
 ```
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6bf7958f5f-dp7gj | v=1
 
