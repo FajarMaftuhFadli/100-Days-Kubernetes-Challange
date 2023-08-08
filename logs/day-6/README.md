@@ -5,7 +5,7 @@
 ![Static Badge](https://img.shields.io/badge/minikube-v1.30.1-326ce5?logo=kubernetes&logoColor=326ce5)
 ![Static Badge](https://img.shields.io/badge/Node.js-v19.9.0-339933?logo=nodedotjs&logoColor=339933)
 
-## Containerize and Deployment of a Node.js Google Wallet Passes Application on Minikube
+## Containerize Node.js Google Wallet Passes Application
 
 ### 1. Initial Setup
 
@@ -48,8 +48,6 @@ Then we build the Docker image.
 We can try to run the image using this command. It run the image on detach mode and on port 80.
 
 `docker run -d -p 80:3000 --name google-wallet-api-passes google-wallet-api-passes`
-
-### 3. Deployment
 
 ## Navigation
 
