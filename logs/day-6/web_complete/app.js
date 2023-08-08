@@ -23,7 +23,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config()
 
 // TODO: Define Issuer ID
-const issuerId = process.env.ISSUERID;
+const issuerId = Buffer.from(process.env.ISSUERID, 'base64')
 
 // TODO: Define Class ID
 const classId = `${issuerId}.codelab_class`;

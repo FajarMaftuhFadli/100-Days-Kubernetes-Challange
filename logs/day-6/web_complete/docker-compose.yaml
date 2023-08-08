@@ -1,0 +1,11 @@
+services:
+  google-wallet-api-passes:
+    image: google-wallet-api-passes
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CREDENTIAL=${CREDENTIAL}
+      - ISSUERID=${ISSUERID}
+    ports:
+      - '3000:3000'
