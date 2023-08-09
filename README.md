@@ -10,6 +10,7 @@ The guide of this challenge can be found in [Here](https://github.com/FajarMaftu
 - [`Day 4`](./logs/day-4/README.md)
 - [`Day 5`](./logs/day-5/README.md)
 - [`Day 6`](./logs/day-6/README.md)
+- [`Day 7`](./logs/day-7/README.md)
 
 <p align="center">
     <img style="border-radius: 1rem;" src="img/0.1.gif">
